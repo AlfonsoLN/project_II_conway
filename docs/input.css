@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    .font-doto {
+            font-family: 'Doto';
+            font-style: normal;
+            font-weight: 700;
+            font-optical-sizing: auto;
+            font-variation-settings: "ROND" 0;
+        }
+    }

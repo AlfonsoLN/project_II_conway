@@ -3,11 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="output.css">
-    <title>Conway's Game of Life</title>
+    <title>John Conway's Game of Life</title>
 </head>
-<body>
-    <h1 class="text-teal-500">Game of Life init</h1>
+<body class="bg-sky-50 dark:bg-slate-600 flex justify-between flex-col h-screen max-h-screen">
+    <header class="w-screen bg-sky-100 dark:bg-slate-700 text-center p-4 flex flex-row items-center">
+        <!-- <a href="test.html" class="text-white">Test</a> -->
+        <h1 class="text-sky-700 dark:text-yellow-400 md:text-5xl text-xl font-doto basis-full">
+            Conway's Game of Life
+        </h1>
+        <button class="p-2 bg-sky-50 dark:bg-gray-600 hover:bg-sky-200 dark:hover:bg-slate-500 rounded-lg md:basis-7 basis-5" id="page-theme" onclick="changeTheme()">
+            <svg class='w-6 h-6 fill-sky-700'>
+                <path class='stroke-sky-700 stroke-2'
+                d='M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z'
+                stroke-linecap='round' stroke-linejoin='round'/>
+            </svg>
+        </button>
+    </header>
+    <main>
+
+    </main>
+    <footer class="bg-sky-100 dark:bg-slate-700 p-4 flex flex-row">
+        <div class="md:flex flex-row gap-2 hidden items-center basis-1/3 justify-start">
+            <svg class="w-7 h-7 fill-none" viewBox="0 0 24 24">
+                <path class="stroke-sky-700 dark:stroke-yellow-400 stroke-2"
+                d="M20 20L18.2678 18.2678M18.2678 18.2678C18.7202 17.8154 19 17.1904 19 16.5C19 15.1193 17.8807 14 16.5 14C15.1193 14 14 15.1193 14 16.5C14 17.8807 15.1193 19 16.5 19C17.1904 19 17.8154 18.7202 18.2678 18.2678ZM15.6 10H18.4C18.9601 10 19.2401 10 19.454 9.89101C19.6422 9.79513 19.7951 9.64215 19.891 9.45399C20 9.24008 20 8.96005 20 8.4V5.6C20 5.03995 20 4.75992 19.891 4.54601C19.7951 4.35785 19.6422 4.20487 19.454 4.10899C19.2401 4 18.9601 4 18.4 4H15.6C15.0399 4 14.7599 4 14.546 4.10899C14.3578 4.20487 14.2049 4.35785 14.109 4.54601C14 4.75992 14 5.03995 14 5.6V8.4C14 8.96005 14 9.24008 14.109 9.45399C14.2049 9.64215 14.3578 9.79513 14.546 9.89101C14.7599 10 15.0399 10 15.6 10ZM5.6 10H8.4C8.96005 10 9.24008 10 9.45399 9.89101C9.64215 9.79513 9.79513 9.64215 9.89101 9.45399C10 9.24008 10 8.96005 10 8.4V5.6C10 5.03995 10 4.75992 9.89101 4.54601C9.79513 4.35785 9.64215 4.20487 9.45399 4.10899C9.24008 4 8.96005 4 8.4 4H5.6C5.03995 4 4.75992 4 4.54601 4.10899C4.35785 4.20487 4.20487 4.35785 4.10899 4.54601C4 4.75992 4 5.03995 4 5.6V8.4C4 8.96005 4 9.24008 4.10899 9.45399C4.20487 9.64215 4.35785 9.79513 4.54601 9.89101C4.75992 10 5.03995 10 5.6 10ZM5.6 20H8.4C8.96005 20 9.24008 20 9.45399 19.891C9.64215 19.7951 9.79513 19.6422 9.89101 19.454C10 19.2401 10 18.9601 10 18.4V15.6C10 15.0399 10 14.7599 9.89101 14.546C9.79513 14.3578 9.64215 14.2049 9.45399 14.109C9.24008 14 8.96005 14 8.4 14H5.6C5.03995 14 4.75992 14 4.54601 14.109C4.35785 14.2049 4.20487 14.3578 4.10899 14.546C4 14.7599 4 15.0399 4 15.6V18.4C4 18.9601 4 19.2401 4.10899 19.454C4.20487 19.6422 4.35785 19.7951 4.54601 19.891C4.75992 20 5.03995 20 5.6 20Z"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <input class="accent-sky-700 dark:accent-yellow-400 w-36" type="range" min="1" max="5" step="1" value="3" name="scale" id="scale">
+        </div>
+        <div class="gap-2 flex md:basis-1/3 basis-1/2 md:justify-center justify-start" action="">
+            <button>
+                <svg class="w-10 h-10 fill-sky-700 dark:fill-yellow-400" viewBox="0 0 100 100">
+                    <path class="stroke-sky-700 dark:stroke-yellow-400 stroke-2"
+                    d="M74.656,56.818c3.895,3.729,5.788,8.795,5.788,15.491c0,1.104,0.896,2,2,2s2-0.885,2-1.989 c0-7.736-2.362-13.91-7.022-18.369C66.646,43.639,46.325,44.551,30,45.269c-2.28,0.101-4.461,0.211-6.499,0.28L38.428,30.62 c0.781-0.781,0.781-2.047,0-2.828s-2.048-0.781-2.828,0L17.479,45.915c-0.375,0.375-0.586,0.884-0.586,1.414 s0.211,1.039,0.586,1.414l18.123,18.12c0.391,0.391,0.902,0.586,1.414,0.586s1.024-0.195,1.415-0.586 c0.781-0.781,0.781-2.048,0-2.828L24.142,49.75c1.915-0.11,3.932-0.261,6.033-0.354C44.919,48.748,65.114,47.688,74.656,56.818z"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button>
+                <svg class="w-7 h-7 fill-sky-700 dark:fill-yellow-400" viewBox="0 0 24 24">
+                    <path class="stroke-sky-700 dark:stroke-yellow-400 stroke-2"
+                    d="M16.6582 9.28638C18.098 10.1862 18.8178 10.6361 19.0647 11.2122C19.2803 11.7152 19.2803 12.2847 19.0647 12.7878C18.8178 13.3638 18.098 13.8137 16.6582 14.7136L9.896 18.94C8.29805 19.9387 7.49907 20.4381 6.83973 20.385C6.26501 20.3388 5.73818 20.0469 5.3944 19.584C5 19.053 5 18.1108 5 16.2264V7.77357C5 5.88919 5 4.94701 5.3944 4.41598C5.73818 3.9531 6.26501 3.66111 6.83973 3.6149C7.49907 3.5619 8.29805 4.06126 9.896 5.05998L16.6582 9.28638Z"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button>
+                <svg class="w-10 h-10 fill-sky-700 dark:fill-yellow-400" viewBox="0 0 100 100">
+                    <path class="stroke-sky-700 dark:stroke-yellow-400 stroke-2"
+                    d="M63.121,66.863c0.391,0.391,0.902,0.586,1.414,0.586s1.023-0.195,1.414-0.586l18.122-18.12 c0.375-0.375,0.586-0.884,0.586-1.414s-0.211-1.039-0.586-1.414L65.95,27.792c-0.781-0.781-2.047-0.781-2.828,0 s-0.781,2.047,0,2.828l14.85,14.852c-2.017-0.058-4.17-0.148-6.421-0.247c-16.326-0.718-36.647-1.608-47.423,8.704 c-4.66,4.46-7.022,10.645-7.022,18.381c0,1.104,0.896,2,2,2s2-0.852,2-1.956c0-6.696,1.894-11.719,5.788-15.447 c9.542-9.132,29.739-8.156,44.481-7.51c2.102,0.093,4.118,0.243,6.033,0.354L63.121,64.035 C62.34,64.816,62.34,66.082,63.121,66.863z"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <div class="gap-2 flex flex-row md:basis-1/3 basis-1/2 justify-end items-center">
+            <p class="text-sky-700 dark:text-yellow-400 md:text-2xl text-xl font-mono">
+                Step
+                <span>
+                    0
+                </span>
+            </p>
+        </div>
+    </footer>
 
     <script src="conway.js"></script>
 </body>
