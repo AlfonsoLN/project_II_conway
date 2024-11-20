@@ -27,4 +27,4 @@ Please use this format for your User Stories assignations
 
 # Live demo
 
-### Link to Game of Life [live demo]
+[Conway's Game of Life](https://alfonsoln.github.io/project_II_conway/)
